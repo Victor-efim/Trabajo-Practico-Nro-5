@@ -106,3 +106,12 @@ void buscar_nodo(pnodo lista, int valor) {
    }
     return encontrado;
 }
+int minimo(pnodo lista) 
+{
+    if (lista == NULL) return -999;
+    int min = lista->dato;
+    for (pnodo i = lista; i != NULL; i = i->siguiente)
+        if (i->dato < min)
+            min = i->dato;
+    return min;
+}
