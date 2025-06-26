@@ -24,3 +24,18 @@ int contar_primos(pnodo lista)
     }
     return contador;
 }
+int contar_mayusculas(pnodo lista) 
+{
+    int cont = 0;
+    for (pnodo i = lista; i != NULL; i = i->siguiente)
+        if (isupper(i->dato)) cont++;
+    return cont;
+}
+
+int contar_minusculas(pnodo lista) 
+{
+    int cont = 0;
+    for (pnodo i = lista; i != NULL; i = i->siguiente)
+        if (islower(i->dato)) cont++;
+    return cont;
+}
