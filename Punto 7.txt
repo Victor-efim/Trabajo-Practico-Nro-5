@@ -15,3 +15,14 @@ if(nodo->getSiguiente() == nullptr)// Si no hay siguiente nodo, se imprime el da
 cout << nodo->getDato() << endl;// Imprime ese dato que es el último de la lista
 
 cout << nodo->getDato() << endl; }// En esta parte al volver de la recursión, imprime el dato actual.
+
+int misterio(Nodo* nodo) //Calcula la longitud de la lista
+{
+    if(nodo == nullptr)
+        return 0;
+    else
+        return misterio(nodo->getSiguiente()) + 1;
+}
+if(nodo == nullptr) //Si se llega al final devuelve 0
+
+return misterio(nodo->getSiguiente()) + 1; // Suma 1 y llama a la función con el siguiente nodo
