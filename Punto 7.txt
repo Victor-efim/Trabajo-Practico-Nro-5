@@ -14,8 +14,8 @@ if(nodo->getSiguiente() == nullptr)// Si no hay siguiente nodo, se imprime el da
 
 cout << nodo->getDato() << endl;// Imprime ese dato que es el último de la lista
 
-cout << nodo->getDato() << endl; }// En esta parte al volver de la recursión, imprime el dato actual.
-
+cout << nodo->getDato() << endl; }// En esta parte al volver de la recursión, imprime el dato actual
+------------------------------------------------------------------------------------------------------------------------------------------------
 int misterio(Nodo* nodo) //Calcula la longitud de la lista
 {
     if(nodo == nullptr)
@@ -25,4 +25,15 @@ int misterio(Nodo* nodo) //Calcula la longitud de la lista
 }
 if(nodo == nullptr) //Si se llega al final devuelve 0
 
-return misterio(nodo->getSiguiente()) + 1; // Suma 1 y llama a la función con el siguiente nodo
+return misterio(nodo->getSiguiente()) + 1; //Suma 1 y llama a la función con el siguiente nodo
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Nodo* desconocido(Nodo* nodo) //Retorna un puntero al final de la lista
+{
+    if(nodo == nullptr || nodo->getSiguiente() == nullptr)
+        return nodo;
+    else
+        return desconocido(nodo->getSiguiente());
+}
+if(nodo == nullptr || nodo->getSiguiente() == nullptr) //Si es el final o es el último nodo lo retorna
+
+return desconocido(nodo->getSiguiente()); // Sigue avanzando recursivamente
