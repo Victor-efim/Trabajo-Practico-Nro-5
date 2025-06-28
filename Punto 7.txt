@@ -1,1 +1,17 @@
+void enigma(Nodo* nodo) //La funcion se encarga de imprimir los datos de la lista al reves
+{
+    if(nodo != nullptr)
+        if(nodo->getSiguiente() == nullptr)
+            cout << nodo->getDato() << endl;
+        else{
+            enigma(nodo->getSiguiente());
+            cout << nodo->getDato() << endl;
+        }
+}
+if(nodo != nullptr)// Con este if se verifica que el nodo exista (que no sea el final de la lista)
 
+if(nodo->getSiguiente() == nullptr)// Si no hay siguiente nodo, se imprime el dato
+
+cout << nodo->getDato() << endl;// Imprime ese dato que es el último de la lista
+
+cout << nodo->getDato() << endl; }// En esta parte al volver de la recursión, imprime el dato actual.
