@@ -86,3 +86,38 @@ pnodo quitar_final(pnodo &inicio) {
     i->ant = NULL;
     return i;
 }
+pnodo quitar_nodo(pnodo &inicio, int valor) {
+    if (inicio == NULL) return NULL;
+    pnodo i = inicio;
+
+    if (i->dato == valor) {
+        return quitar_inicio(inicio);
+    }
+
+    while (i != NULL && i->dato != valor)
+        i = i->sig;
+
+    if (i == NULL) return NULL;
+
+    if (i->sig != NULL)
+        i->sig->ant = i->ant;
+    if (i->ant != NULL)
+        i->ant->sig = i->sig;
+
+    i->sig = NULL;
+    i->ant = NULL;
+    return i;
+}
+
+bool buscar(pnodo inicio, int valor) {
+    for (pnodo i = inicio; i != NULL; i = i->sig)
+        if (i->dato == valor)
+            return true;
+    return false;
+}
+
+void mostrar_lista(pnodo inicio) {
+    for (pnodo i = inicio; i != NULL; i = i->sig)
+        cout << i->dato << " ";
+    cout << endl;
+}
